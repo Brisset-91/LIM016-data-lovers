@@ -111,7 +111,7 @@ searchSport.addEventListener("keyup", (e)=> {
 });
 
 
-/////////////////////////////////////////////////////////////
+/*------------------------------código de los atletas*/
 /* .....Realizando un nuevo array para motrar en pantalla............. */
 let newListsAthlete= data.athletes.map(item=>{
   return [item.name,item]
@@ -124,6 +124,10 @@ let unicos = [...personasMapArr.values()]; // Conversión a un array
 function listName(e) {
   const athlete= document.getElementById("hereAthletes")
 
+  let span = document.getElementById("close");
+span.addEventListener("click", (e)=>{
+  modal.style.display="block";
+})
   let onlyAhtete =e.forEach((index)=>{
     let athletes_screen= document.createElement("li");
     athletes_screen.className="btnYellow";
@@ -131,44 +135,55 @@ function listName(e) {
     athletes_screen.innerHTML= index.name;
     athletes_screen.onclick= (e)=>contAthletes(e,index);
     athlete.appendChild(athletes_screen)
+    
+athletes_screen.addEventListener("click", (e)=>{
+  modalAthlete.style.display="block";
+})
+
   })
 }
+const modalAthlete= document.getElementById("modal");
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+
 
 /* .....Funcion para crear el card con el nuevo array................. */
 const prueba = listName(unicos)
-
 const contAthletes = (event,unicos) => {
- 
-    let nameAthlete= document.getElementById("name")
-    nameAthlete.innerHTML= unicos.name; 
+  
+  let nameAthlete= document.getElementById("name")
+  nameAthlete.innerHTML= unicos.name; 
+  
+  let genderAthlete= document.getElementById("gender")
+  genderAthlete.innerHTML= unicos.gender;
+  
+  let heightAthlete= document.getElementById("height")
+  heightAthlete.innerHTML= unicos.height;
+  
+  let weightAthlete= document.getElementById("weight")
+  weightAthlete.innerHTML= unicos.weight;
+  
+  let sportAthlete= document.getElementById("sport")
+  sportAthlete.innerHTML= unicos.sport;
+  
+  let teamAthlete= document.getElementById("team")
+  teamAthlete.innerHTML= unicos.team;
+  
+  let ageAthlete= document.getElementById("age")
+  ageAthlete.innerHTML= unicos.age;
+  
+  let eventAthlete= document.getElementById("event")
+  eventAthlete.innerHTML= unicos.event; 
 
-    let genderAthlete= document.getElementById("gender")
-    genderAthlete.innerHTML= unicos.gender;
-
-    let heightAthlete= document.getElementById("height")
-    heightAthlete.innerHTML= unicos.height;
-
-    let weightAthlete= document.getElementById("weight")
-    weightAthlete.innerHTML= unicos.weight;
-
-    let sportAthlete= document.getElementById("sport")
-    sportAthlete.innerHTML= unicos.sport;
-
-    let teamAthlete= document.getElementById("team")
-    teamAthlete.innerHTML= unicos.team;
-
-    let ageAthlete= document.getElementById("age")
-    ageAthlete.innerHTML= unicos.age;
-
-    let eventAthlete= document.getElementById("event")
-    eventAthlete.innerHTML= unicos.event; 
 }
 
 /* ..........Funcionalidad con el Search............. */
 const search = document.getElementById("searchBar");
 const results = document.getElementById("hereAthletes");
 let search_term = "";
-
 
 const showList = () => {
   results.innerHTML = "";
