@@ -240,14 +240,11 @@ section{
 .athletes{
     display:none;
     width: 100%;
-    background-image: url('https://images.vexels.com/media/users/3/77434/raw/70da17038368661b93b985dd3a79b363-rio-2016-ahtletics-100m.jpg');
+    /*background-image: url('https://images.vexels.com/media/users/3/77434/raw/70da17038368661b93b985dd3a79b363-rio-2016-ahtletics-100m.jpg');
     background-repeat: no-repeat;
-    background-position:top;
-    
+    background-position:top;*/
 }
-.athletes image{
-    opacity: 0.5;
-}
+
 .listAthletes{
     width: 100%;
     display: flex;
@@ -265,29 +262,53 @@ section{
     display: flex;
     flex-direction: column;
     width: 30%;
-    height: 40%;
+    height: 28rem;
     border: solid #F1B839;
-    border-radius: 10px;
-    padding: 0.5rem;
-    margin: 3rem;
+    border-radius: 20px;
+    padding: 1.2rem;
+    margin-left: 4rem;
+    margin-top: 2rem;
     box-shadow:  16px 16px 44px #5c5606, 
              -16px -16px 44px #282a28;
     transition: 0.3s all ease-in-out;
-
+    /*position: fixed;*/
+    left: 60%;
 }
 .texCard{
     display: flex;
     flex-direction: row;
     align-items: center;
-    height: 4.5rem;
+    height: 3.7rem;
 }
 
-ul:hover{    /*ponerle clase*/
+ul:hover{
     cursor: pointer;
 }
 .title{
     text-align: center;
+    font-size: 1.5rem;
 }
+#searchWrapper {
+    display: flex;
+    justify-content: end;
+    align-items: center;  
+    
+}    /*position: relative;*/
+#searchBar {
+    width: 30%;
+    height: 38px;
+    border-radius: 5px;
+    border: 1px solid #484242;
+    padding: 5px 10px;
+    font-size: 12px;
+}
+
+#searchWrapper::after {
+    content: '🔍';
+    position: absolute;
+    right: 23px;
+}
+
 /*-------------------------atletas varias medallas*/
 
 .multipleMedals{
@@ -349,7 +370,7 @@ ul:hover{    /*ponerle clase*/
 footer{   
     background-color: black;
     padding: 10px 0 10px 0;
-    position:absolute;
+    /*position:absolute;*/
     width: 100%;    
 }
 .foot{
