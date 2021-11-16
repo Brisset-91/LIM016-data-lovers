@@ -10,15 +10,19 @@
     flex-direction: row;
     justify-content: space-around;
     width: 100%;
+       
+    background-color: rgb(241, 240, 240);
     /* border-style: solid; */
 }
 
 body{
     width: 100%;
     font-family: 'Source Sans Pro', sans-serif;
+       
+    background-color: rgb(241, 240, 240);
 }
 .container{
-    display:none;  /*cambiar a block*/
+    display:block;  /*cambiar a block*/
     background-color: rgb(241, 240, 240);
 }
 /* modal*/
@@ -38,75 +42,99 @@ body{
 .close{
     color:white;
 }
-/*-------------------------------------------los atletas*/
-.athletes{
-    display:block;  /*cambiar a none*/
-    width: 100%;
-}
-
-.listAthletes{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    font-size: 1.2rem;
-}
-
-#hereAthletes{
-    flex-direction: column;
-    width: 60%; 
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-}
 #cardAthlete{
     display: flex;
     flex-direction: column;
+    justify-items: center;
     width: 30%;
-    height: 28rem;
-    border: solid #F1B839;
-    border-radius: 20px;
+    border: 0.4rem solid #F1B839;
+    border-radius: 2rem;
     padding: 1.2rem;
-    margin-left: 4rem;
     margin-top: 2rem;
     box-shadow:  16px 16px 44px #5c5606, 
              -16px -16px 44px #282a28;
     transition: 0.3s all ease-in-out;
     /*position: fixed;*/
-    left: 60%;
     background-color: white;
+    font-size:1rem;
+    margin: 4rem 32rem;
 }
 .texCard{
     display: flex;
     flex-direction: row;
     align-items: center;
-    height: 3.7rem;
-}
-
-ul:hover{
-    cursor: pointer;
+    line-height: 2.4rem;
+    color:black;
+    justify-content: center;
 }
 .title{
     text-align: center;
     font-size: 1.5rem;
 }
+.texTitle{
+    color:black;
+    font-weight: bolder;
+    font-size: 1.5rem;
+    margin-left: 0.2rem;
+}
+.rioAtletas{
+    width: 20%;
+    height: 20%;
+    border-radius: 1rem;
+    display: block;
+    margin:auto;
+}
+.img_sport{
+    width: 20%;
+    height: 20%;
+    display: block;
+    margin:auto;
+}
+/*-------------------------------------------los atletas*/
+.athletes{
+    display:none;  /*cambiar a none*/
+    width: 100%;
+}
+.atletes_container{
+    margin: 0 3rem;
+}
+.listAthletes{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+#hereAthletes{
+    width: 100%; 
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+#hereAthletes:hover{
+    cursor: pointer;
+}
+
 #searchWrapper {
     display: flex;
-    justify-content: end;
-    align-items: center;  
-    
-}    /*position: relative;*/
+    justify-content: center;    
+    position: relative;
+} 
 #searchBar {
-    width: 30%;
-    height: 38px;
-    border-radius: 5px;
-    border: 1px solid #484242;
-    padding: 5px 10px;
-    font-size: 12px;
+    border-radius: 0.5em ;
+    padding: 1em;
+    width:100%;
+    border:rgb(241, 240, 240);
+    outline: none;
+    margin:3rem
 }
 
 #searchWrapper::after {
     content: '🔍';
     position: absolute;
-    right: 23px;
+    top: 3.5rem;
+    right: 4rem;
+}
+#searchBar:focus{
+    border: 3px solid #ecc100;
 }
 
 /*-------------------------------------------HEADER*/
@@ -251,17 +279,19 @@ h2{
     margin: 1.5rem;
     padding: 0.2rem;
     text-align: center;
-}
-section{
-    display: flex;
-    flex-direction: column;
-    background-color: rgb(241, 240, 240);
+    background-color: white;  /*los 4 de abajo aumente*/
+    border-radius: 0.5em;
+    /* width: 100%; */
+    list-style: none;
+
 }
 
 /*donde se encierra la info de los deportes y eventos*/
 .sports {
     display:none; /*cambiar a none*/
     /* border-style: solid; */
+     display: flex;
+    flex-direction: column;
 }
 .sport_ev{
     width: 100%;
@@ -272,7 +302,8 @@ section{
     border-radius: 0.5em ;
     padding: 1em;
     width:100%;
-    border:rgb(241, 240, 240);
+    outline: none;
+    border:none;
 }
 .search:focus{
     border: 3px solid #77c2ff;
@@ -318,93 +349,25 @@ section{
 /*----------------------------los países*/
 .countries{
     display:none;
+     display: flex;
+    flex-direction: column;
 }
 .hereCountries{
     display: grid;
     grid-template-columns: auto auto auto auto;
 }
 
-/*-------------------------------------------los atletas*/
-.athletes{
-    display:none;
-    width: 100%;
-    /*background-image: url('https://images.vexels.com/media/users/3/77434/raw/70da17038368661b93b985dd3a79b363-rio-2016-ahtletics-100m.jpg');
-    background-repeat: no-repeat;
-    background-position:top;*/
-}
-
-.listAthletes{
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    font-size: 1.2rem;
-}
-
-#hereAthletes{
-    flex-direction: column;
-    width: 60%; 
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-}
-#cardAthlete{
-    display: flex;
-    flex-direction: column;
-    width: 30%;
-    height: 28rem;
-    border: solid #F1B839;
-    border-radius: 20px;
-    padding: 1.2rem;
-    margin-left: 4rem;
-    margin-top: 2rem;
-    box-shadow:  16px 16px 44px #5c5606, 
-             -16px -16px 44px #282a28;
-    transition: 0.3s all ease-in-out;
-    /*position: fixed;*/
-    left: 60%;
-}
-.texCard{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    height: 3.7rem;
-}
-
-ul:hover{
-    cursor: pointer;
-}
-.title{
-    text-align: center;
-    font-size: 1.5rem;
-}
-#searchWrapper {
-    display: flex;
-    justify-content: end;
-    align-items: center;  
-    
-}    /*position: relative;*/
-#searchBar {
-    width: 30%;
-    height: 38px;
-    border-radius: 5px;
-    border: 1px solid #484242;
-    padding: 5px 10px;
-    font-size: 12px;
-}
-
-#searchWrapper::after {
-    content: '🔍';
-    position: absolute;
-    right: 23px;
-}
 
 /*-------------------------atletas varias medallas*/
-
+.multipleMedals_container{
+    margin: 1rem 6rem;
+    padding: 0 1rem;
+}
 .multipleMedals{
     display: none;  /*cambiar a none*/
     width: 100%;
     /* border-style: solid; */
-    margin: 1rem 6rem;
-    padding: 0 1rem;
+    
 }
 .multipleMedals-Info-text{
     font-size: 1rem;
@@ -457,7 +420,7 @@ ul:hover{
 footer{   
     background-color: black;
     padding: 10px 0 10px 0;
-    /*position:absolute;*/
+    position:absolute;
     width: 100%;    
 }
 .foot{
