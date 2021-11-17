@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Source+Sans+Pro:wght@200&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
   </head>
   <body>
     <div id="root"></div>
@@ -205,9 +206,26 @@
         <p class="texTitle" id="age">21</p>
       </div>
     </div>
-</div>
-    <script src="main.js" type="module"></script>
+  </div>
+
+   <!-------------------------Gráfica------------------------------>
+
+   <span class="grafica" id="link_graficos"><span class="arrow">»</span> Gráficos importantes<br><br></span>
+   Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, quia rerum! Repellendus iusto voluptatem doloremque commodi corrupti. Doloribus, autem<br><br>
+
+   <section id="graficas">
+    <h1>Grafica</h1>
+    
+      <canvas id="grafica" width="400" height="400"></canvas>
+      <button onclick="fetchData()" >datos de graficos</button>
+      <!--<div>
+        <canvas id="myChart"></canvas>
+      </div>---------->
+   </section>
+  
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="main.js" type="module"></script>
+
     </main>  
     <footer>
       <div class="foot">

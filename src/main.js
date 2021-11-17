@@ -305,3 +305,108 @@ searchFemAthlete.addEventListener("keyup", (e)=> {
   }
 });
 
+
+
+
+//-----------------Gráficas---------------
+
+let graficos= document.getElementById("link_graficos");
+graficos.addEventListener("click", (e)=>{
+  e.preventDefault(); 
+
+  document.getElementById("contaiiner").style.display = "none";
+  document.getElementById("multipleMedals").style.display = "none";
+  document.getElementById("graficas").style.display = "block";
+  document.getElementById("countries").style.display = "none";
+  document.getElementById("sports").style.display = "none";
+  document.getElementById("athletes").style.display = "none";
+  document.getElementById("female").style.display = "none";
+});
+
+
+/*const Chart = require('chart.js');*/
+
+
+async function fetchData() {
+  const url = 'file:///home/brisset/Documentos/Laboratoria/LIM016-data-lovers/src/data/athletes/athletes.json';
+  const response = await fetch(url);
+
+  const datapoint = await response.json();
+  console.log(datapoint);
+  return datapoint;
+};
+
+/*
+const ctx = document.getElementById('grafica');
+const myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+*/
+
+
+/*
+// <block:setup:1>
+const labels = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+];
+const data1 = {
+  labels: labels,
+  datasets: [{
+    label: 'My First dataset',
+    backgroundColor: 'rgb(255, 99, 132)',
+    borderColor: 'rgb(255, 99, 132)',
+    data: [0, 10, 5, 2, 20, 30, 45],
+  }]
+};
+// </block:setup>
+
+// <block:config:0>
+const config = {
+  type: 'line',
+  data: data1,
+  options: {}
+};
+// </block:config>
+
+
+
+const myChart = new Chart(
+  document.getElementById('myChart'),
+  config
+);*/

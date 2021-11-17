@@ -487,6 +487,14 @@ html{
   .searchFemAthl:focus{
       border: 0.2rem solid #DD1717;
   }
+
+/*------------------------------Graficas------------------------------------*/
+  #graficas{
+    display: block;  /*cambiar a none*/
+    width: 100%;
+    /* border-style: solid; */
+    
+}
 /*------------------------------------------ FOOTER-----------------------------------------------------------------------*/
 
 footer{   
