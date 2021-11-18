@@ -42,6 +42,7 @@ export const noRepeated = arr =>{
     return acc
   }, {});
 };
+
 export const spliceIntoChunks= (arr, chunkSize) =>{
   const res = [];
   while (arr.length > 0) {
@@ -61,27 +62,16 @@ export const justFemale=(arr)=>{
 // };
 
 export const medalFemale = (data) => {
-  let datos = data.map(item => [item.name, item.gender, item.sport, item.medal]);
- 
-  let female = datos.filter ((arr) => {
-    if (arr[1]=== "F") {
-      let filtroFameleMedal = [arr.name, arr.gender, arr.sport, arr.medal]
-      
+  let datos = data.map(item => [/*item.name, item.sport, */item.gender, item.medal]);
+  //console.log(datos)
+  /*let female = datos.filter ((arr) => {
+    if (arr[0]=== "F") {
+      let filtroFameleMedal = [/*arr.name, arr.gender, arr.sport, arr.medal]
       return filtroFameleMedal
-    }
-        
-  })
+    }  
+  })*/
   
-  return female
+  //return female
+  return datos
  
- 
-
-/*  scores.sort((a, b) =>  b[1] - a[1]);
-  let movies10 = [], scores10 = [];
-
-  for (let i = 0; i < 10; i++) {
-    movies10[i] = scores[i][0];
-    scores10[i] = scores[i][1];
-  }
-  return [movies10, scores10];*/
 };

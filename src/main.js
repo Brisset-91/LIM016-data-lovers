@@ -325,10 +325,7 @@ graficos.addEventListener("click", (e)=>{
 
 
 //const Chart = require('chart.js');
-
-
-
-
+/*
 const addChart = (title, typeChart, labelsChart, legendShow, string)=>{
   const chart = document.getElementById('grafica').getContext('2d');
   const colors = ['rgb(255, 99, 132)', 'rgb(54, 162, 235)', 'orange','#C32BAD','#7027A0','#6ECB63','#3A6351','#1E3163', '#C84B31'];
@@ -374,14 +371,10 @@ const addChart = (title, typeChart, labelsChart, legendShow, string)=>{
   })
 }
 
-/*let medal = medalFemale(data.athletes)
-console.log(medal)*/
-
-
 document.addEventListener('DOMContentLoaded', ()=>{
   let medal = ['Female', 'Male',];
   
-  addChart('medal', 'line', medalFemale(data.athletes),true, " score");
+  addChart('medal', 'line', medalFemale(data.athletes),false, " score");
 
   /*let gender = ['Female', 'Male',];
   
@@ -389,11 +382,15 @@ document.addEventListener('DOMContentLoaded', ()=>{
 
   let species = ['Human', 'Cat', 'Raccoon Dog', 'Spirit', 'Deity, Dragon', 'Totoro', 'Witch', 'Borrower', 'Others'];
 
-  addChart('specie', 'doughnut', dataLabelToChart(dataFilms, 'specie', species),true, " amount");*/
+  addChart('specie', 'doughnut', dataLabelToChart(dataFilms, 'specie', species),true, " amount");
 
  
 });
-
+*/
+let medal = medalFemale(data.athletes)
+//console.log(medal)
+let cantMedal = timesRepeated(medal)
+console.log(cantMedal)
 /*
 async function fetchData() {
   const url = 'file:///home/brisset/Documentos/Laboratoria/LIM016-data-lovers/src/data/athletes/athletes.json';
@@ -402,17 +399,15 @@ async function fetchData() {
   const datapoint = await response.json();
   console.log(datapoint);
   return datapoint;
-};
-
-
-const ctx = document.getElementById('grafica');
+};*/
+const ctx = document.getElementById('grafica').getContext ( '2d' );
 const myChart = new Chart(ctx, {
-    type: 'bar',
+    type: 'pie',
     data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        labels: ['Woman', 'Woman', 'Woman', 'Man', 'Man', 'Man'],
         datasets: [{
             label: '# of Votes',
-            data: [12, 19, 3, 5, 2, 3],
+            data: timesRepeated(medal),
             backgroundColor: [
                 'rgba(255, 99, 132, 0.2)',
                 'rgba(54, 162, 235, 0.2)',
@@ -440,7 +435,7 @@ const myChart = new Chart(ctx, {
         }
     }
 });
-*/
+
 
 
 /*
