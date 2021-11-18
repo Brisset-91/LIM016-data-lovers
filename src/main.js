@@ -1,4 +1,4 @@
-import { /*anotherExample,*/rio_teams, noRepeated,justFemale, timesRepeated, spliceIntoChunks} from './data.js'; //las funciones
+import { /*anotherExample,*/medalFemale,rio_teams, noRepeated,justFemale, timesRepeated, spliceIntoChunks} from './data.js'; //las funciones
 
 import data from './data/athletes/athletes.js'; 
 
@@ -324,9 +324,77 @@ graficos.addEventListener("click", (e)=>{
 });
 
 
-/*const Chart = require('chart.js');*/
+//const Chart = require('chart.js');
 
 
+
+
+const addChart = (title, typeChart, labelsChart, legendShow, string)=>{
+  const chart = document.getElementById('grafica').getContext('2d');
+  const colors = ['rgb(255, 99, 132)', 'rgb(54, 162, 235)', 'orange','#C32BAD','#7027A0','#6ECB63','#3A6351','#1E3163', '#C84B31'];
+  
+  const myChart = new Chart(chart,{
+    type: typeChart,
+    data: {
+      labels: labelsChart[0],
+      datasets: [{
+        label: string,
+        data: labelsChart[1],
+        backgroundColor: colors,
+        borderColor: [
+          'rgba(255, 99, 132, 1)'
+        ],
+        borderWidth: 1.5,
+        hoverOffset: 4
+      }],
+      options: {
+        scales: {
+          y: {
+            beginAtZero: true
+          }
+        }
+      }
+    },
+    options: {
+      plugins: {
+        title: {
+          display: true,
+          text: title.toUpperCase(),
+          font: {
+            size: 30
+          }
+        },
+        legend: {
+          position: 'right',
+          display: legendShow
+        }
+      },
+      responsive: true,
+    }
+  })
+}
+
+/*let medal = medalFemale(data.athletes)
+console.log(medal)*/
+
+
+document.addEventListener('DOMContentLoaded', ()=>{
+  let medal = ['Female', 'Male',];
+  
+  addChart('medal', 'line', medalFemale(data.athletes),true, " score");
+
+  /*let gender = ['Female', 'Male',];
+  
+  addChart('gender', 'pie', dataLabelToChart(dataFilms, 'gender', gender),true, " amount");
+
+  let species = ['Human', 'Cat', 'Raccoon Dog', 'Spirit', 'Deity, Dragon', 'Totoro', 'Witch', 'Borrower', 'Others'];
+
+  addChart('specie', 'doughnut', dataLabelToChart(dataFilms, 'specie', species),true, " amount");*/
+
+ 
+});
+
+/*
 async function fetchData() {
   const url = 'file:///home/brisset/Documentos/Laboratoria/LIM016-data-lovers/src/data/athletes/athletes.json';
   const response = await fetch(url);
@@ -336,7 +404,7 @@ async function fetchData() {
   return datapoint;
 };
 
-/*
+
 const ctx = document.getElementById('grafica');
 const myChart = new Chart(ctx, {
     type: 'bar',

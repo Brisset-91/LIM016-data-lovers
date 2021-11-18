@@ -60,3 +60,28 @@ export const justFemale=(arr)=>{
 //   return 'OMG';
 // };
 
+export const medalFemale = (data) => {
+  let datos = data.map(item => [item.name, item.gender, item.sport, item.medal]);
+ 
+  let female = datos.filter ((arr) => {
+    if (arr[1]=== "F") {
+      let filtroFameleMedal = [arr.name, arr.gender, arr.sport, arr.medal]
+      
+      return filtroFameleMedal
+    }
+        
+  })
+  
+  return female
+ 
+ 
+
+/*  scores.sort((a, b) =>  b[1] - a[1]);
+  let movies10 = [], scores10 = [];
+
+  for (let i = 0; i < 10; i++) {
+    movies10[i] = scores[i][0];
+    scores10[i] = scores[i][1];
+  }
+  return [movies10, scores10];*/
+};
