@@ -10,7 +10,6 @@ toggle_bar.addEventListener("click", ()=>{
 })
 
 
-
 let home_click= document.getElementById("home-click");
 home_click.addEventListener("click", (e)=>{
   e.preventDefault(); 
@@ -386,17 +385,17 @@ graficos.addEventListener("click", (e)=>{
   document.getElementById("female").style.display = "none";
 });
 
-let medal = medalFemale(data.athletes)
-let cantMedal = timesRepeated(medal)
-console.log(cantMedal)
-
+let medal = medalFemale(data.athletes);
+let cantMedal = timesRepeated(medal);
+// //console.log(Array.isArray(medal));
+//console.log(cantMedal);
 const ctx = document.getElementById('myChart').getContext('2d');
 
 const myChart = new Chart(ctx, {
     type: 'bar',
     data: {
         datasets: [{
-            label: 'Ganadores de medalla',
+            label: 'Medal Winners',
             data: cantMedal,
             backgroundColor: [
                 'rgb(255, 205, 86, 0.9)',
@@ -407,8 +406,8 @@ const myChart = new Chart(ctx, {
                 'rgba(255, 159, 64, 0.9)'
             ],
             borderColor: [
-                'rgba(FF, FF, 00, 0.2)',
-                'rgba(FF, FF, 00, 0.2)',
+                'rgba(80, 80, 00, 0.2)',
+                'rgba(80, 80, 00, 0.2)',
                 'rgba(80, 80, 80, 0.2)',
                 'rgba(255, 159, 64, 1)',
                 'rgba(80, 80, 80, 0.2)',
@@ -424,4 +423,4 @@ const myChart = new Chart(ctx, {
             }
         }
     }
-});
+});   
