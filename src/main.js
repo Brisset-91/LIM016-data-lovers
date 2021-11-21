@@ -167,13 +167,14 @@ e.forEach((index)=>{
     athletes_screen.className="btnYellow";
     athletes_screen.style.flexDirection = "row"
     athletes_screen.innerHTML= index.name;
-    athletes_screen.onclick= (e)=>contAthletes(e,index);
+    //athletes_screen.onclick= (e)=>contAthletes(e,index);
+    //athletes_screen.addEventListener("click",contAthletes)
     athlete.appendChild(athletes_screen)
     
-athletes_screen.addEventListener("click", showModal);
-function showModal(){
-  modalAthlete.style.display="block";
-}
+    athletes_screen.addEventListener("click", /*showModal,*/contAthletes);
+    function showModal(){
+      modalAthlete.style.display="block";
+    }
 
 })
 }
@@ -183,37 +184,67 @@ window.onclick = function(event) {
     modalAthlete.style.display = "none";
   }
 }
-
-
 /* .....Funcion para crear el card con el nuevo array................. */
-
-const contAthletes = (event,unicos) => {
+function contAthletes() {
+  let divDetallesGrid = document.createElement("div");
   
-  let nameAthlete= document.getElementById("name")
-  nameAthlete.innerHTML= unicos.name; 
-  
-  let genderAthlete= document.getElementById("gender")
-  genderAthlete.innerHTML= unicos.gender;
-  
-  let heightAthlete= document.getElementById("height")
-  heightAthlete.innerHTML= unicos.height;
-  
-  let weightAthlete= document.getElementById("weight")
-  weightAthlete.innerHTML= unicos.weight;
-  
-  let sportAthlete= document.getElementById("sport")
-  sportAthlete.innerHTML= unicos.sport;
-  
-  let teamAthlete= document.getElementById("team")
-  teamAthlete.innerHTML= unicos.team;
-  
-  let ageAthlete= document.getElementById("age")
-  ageAthlete.innerHTML= unicos.age;
-  
-  let eventAthlete= document.getElementById("event")
-  eventAthlete.innerHTML= unicos.event; 
+  unicos.forEach(element => {
+    let nameAthlete= document.getElementById("name")
+    nameAthlete.innerHTML= element.name; 
+    
+    let genderAthlete= document.getElementById("gender")
+    genderAthlete.innerHTML= element.gender;
+    
+    let heightAthlete= document.getElementById("height")
+    heightAthlete.innerHTML= element.height;
+    
+    let weightAthlete= document.getElementById("weight")
+    weightAthlete.innerHTML= element.weight;
+    
+    let sportAthlete= document.getElementById("sport")
+    sportAthlete.innerHTML= elementsport;
+    
+    let teamAthlete= document.getElementById("team")
+    teamAthlete.innerHTML= element.team;
+    
+    let ageAthlete= document.getElementById("age")
+    ageAthlete.innerHTML= element.age;
+    
+    let eventAthlete= document.getElementById("event")
+    eventAthlete.innerHTML= element.event;
+  });
 }
 
+/*
+function contAthletes (){
+  unicos.forEach(unicos => {
+    
+    let nameAthlete= document.getElementById("name")
+    nameAthlete.innerHTML= unicos.name; 
+    
+    let genderAthlete= document.getElementById("gender")
+    genderAthlete.innerHTML= unicos.gender;
+    
+    let heightAthlete= document.getElementById("height")
+    heightAthlete.innerHTML= unicos.height;
+    
+    let weightAthlete= document.getElementById("weight")
+    weightAthlete.innerHTML= unicos.weight;
+    
+    let sportAthlete= document.getElementById("sport")
+    sportAthlete.innerHTML= unicos.sport;
+    
+    let teamAthlete= document.getElementById("team")
+    teamAthlete.innerHTML= unicos.team;
+    
+    let ageAthlete= document.getElementById("age")
+    ageAthlete.innerHTML= unicos.age;
+    
+    let eventAthlete= document.getElementById("event")
+    eventAthlete.innerHTML= unicos.event; 
+  });
+}
+*/
 
   /* ..........Funcionalidad con el Search............. */
   const search = document.getElementById("searchBar");
