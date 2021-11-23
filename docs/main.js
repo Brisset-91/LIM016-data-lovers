@@ -74,7 +74,6 @@ text_click.addEventListener("click", (e)=>{
 let link_female= document.getElementById("link_female");
 link_female.addEventListener("click", (e)=>{
   e.preventDefault(); 
-
   document.getElementById("contaiiner").style.display = "none"; 
   document.getElementById("female").style.display = "block";
   document.getElementById("multipleMedals").style.display = "none";
@@ -151,11 +150,10 @@ var personasMapArr= new Map(newListsAthlete);
 let unicos = [...personasMapArr.values()]; // Conversión a un array
 //console.log(unicos)
 /* .....Funcion para crear la lista de atletas con el nuevo array...... */
-
 function listName(e) {
   const athlete= document.getElementById("hereAthletes")
 
-  e.forEach((index)=>{
+e.forEach((index)=>{
     let athletes_screen= document.createElement("li");
     athletes_screen.className="btnYellow";
     athletes_screen.style.flexDirection = "row"
@@ -163,10 +161,10 @@ function listName(e) {
     athletes_screen.onclick= (e)=>contAthletes(e,index);
     athlete.appendChild(athletes_screen)
     
-    //athletes_screen.addEventListener("click", showModal);
-   /* athletes_screen.onclick=function showModal(){
-      modalAthlete.style.display="block";
-    }*/
+athletes_screen.addEventListener("click", showModal);
+function showModal(){
+  modalAthlete.style.display="block";
+}
 
 })
 }
@@ -176,10 +174,12 @@ window.onclick = function(event) {
     modalAthlete.style.display = "none";
   }
 }
-/* .....Funcion para crear el card con el nuevo array................. */
-const contAthletes = (event,unicos) => {
-  modalAthlete.style.display="block";
 
+
+/* .....Funcion para crear el card con el nuevo array................. */
+
+const contAthletes = (event,unicos) => {
+  
   let nameAthlete= document.getElementById("name")
   nameAthlete.innerHTML= unicos.name; 
   
@@ -201,37 +201,10 @@ const contAthletes = (event,unicos) => {
   let ageAthlete= document.getElementById("age")
   ageAthlete.innerHTML= unicos.age;
   
+  let eventAthlete= document.getElementById("event")
+  eventAthlete.innerHTML= unicos.event; 
 }
-/*
-function contAthletes (){
-  unicos.forEach(unicos => {
-    
-    let nameAthlete= document.getElementById("name")
-    nameAthlete.innerHTML= unicos.name; 
-    
-    let genderAthlete= document.getElementById("gender")
-    genderAthlete.innerHTML= unicos.gender;
-    
-    let heightAthlete= document.getElementById("height")
-    heightAthlete.innerHTML= unicos.height;
-    
-    let weightAthlete= document.getElementById("weight")
-    weightAthlete.innerHTML= unicos.weight;
-    
-    let sportAthlete= document.getElementById("sport")
-    sportAthlete.innerHTML= unicos.sport;
-    
-    let teamAthlete= document.getElementById("team")
-    teamAthlete.innerHTML= unicos.team;
-    
-    let ageAthlete= document.getElementById("age")
-    ageAthlete.innerHTML= unicos.age;
-    
-    let eventAthlete= document.getElementById("event")
-    eventAthlete.innerHTML= unicos.event; 
-  });
-}
-*/
+
 
   /* ..........Funcionalidad con el Search............. */
   const search = document.getElementById("searchBar");
@@ -343,57 +316,3 @@ function female(){
     }       
   }
 }
-
-/*----Graficas-----*/
-let graficos= document.getElementById('clickCharts');
-graficos.addEventListener("click", (e)=>{
-  e.preventDefault(); 
-
-  document.getElementById("contaiiner").style.display = "none";
-  document.getElementById("multipleMedals").style.display = "none";
-  document.getElementById("graficas").style.display = "flex";
-  document.getElementById("countries").style.display = "none";
-  document.getElementById("sports").style.display = "none";
-  document.getElementById("athletes").style.display = "none";
-  document.getElementById("female").style.display = "none";
-});
-
-let medal = medalFemale(data.athletes);
-let cantMedal = timesRepeated(medal);
-// //console.log(Array.isArray(medal));
-//console.log(cantMedal);
-const ctx = document.getElementById('myChart').getContext('2d');
-
-new Chart(ctx, {
-    type: 'bar',
-    data: {
-        datasets: [{
-            label: 'Medal Winners',
-            data: cantMedal,
-            backgroundColor: [
-                'rgb(255, 205, 86, 0.9)',
-                'rgb(255, 205, 86, 0.9)',
-                'rgba(80, 80, 80, 0.4)',
-                'rgba(255, 159, 64, 0.9)',
-                'rgba(80, 80, 80, 0.4)',
-                'rgba(255, 159, 64, 0.9)'
-            ],
-            borderColor: [
-                'rgba(80, 80, 00, 0.2)',
-                'rgba(80, 80, 00, 0.2)',
-                'rgba(80, 80, 80, 0.2)',
-                'rgba(255, 159, 64, 1)',
-                'rgba(80, 80, 80, 0.2)',
-                'rgba(255, 159, 64, 1)'
-            ],
-            borderWidth: 1
-        }]
-    },
-    options: {
-        scales: {
-            y: {
-                beginAtZero: true
-            }
-        }
-    }
-});   

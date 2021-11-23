@@ -1,4 +1,4 @@
-import {rio_teams, noRepeated, justFemale, timesRepeated, spliceIntoChunks, medalFemale} from '../src/data.js';
+import {rio_teams, noRepeated, justFemale, timesRepeated, spliceIntoChunks} from '../src/data.js';
 
 describe('rio_teams', () => {  /*ya salió*/
   it('is a function', () => {
@@ -53,7 +53,7 @@ describe('justFemale', ()=>{   /*ya salió*/
           "gender": "F"
       }
   ];
-  it('returns [{"name": "Patimat Abakarova","gender": "F"}]', () => {
+  it('retorna lo esperado', () => {
     expect(justFemale(justFemaleTest)).toEqual([{"name": "Patimat Abakarova","gender": "F"}]);
   });
 });
@@ -77,7 +77,6 @@ describe('spliceIntoChunks', ()=>{
     expect(spliceIntoChunks(chunksTest,2)).toEqual([ [ "Gymnastics All-Around", "Silver" ],["Gymnastics Horse Vault", "Silver"],["Gymnastics Rings", "Bronze"] ]); 
   });
 });
-
 
 const medalFemaleTest=[
   {
