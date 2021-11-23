@@ -78,6 +78,29 @@ describe('spliceIntoChunks', ()=>{
   });
 });
 
+
+const medalFemaleTest=[
+  {
+    "gender": "F",
+    "medal": "gold"
+  },
+  {
+      "gender": "M",
+      "medal": "silver"
+  }
+];
+
+describe('medalFemale', ()=>{
+  it('is a function', ()=>{
+    expect(typeof medalFemale).toBe(medalFemaleTest);
+  })
+
+  it('returns [["F", "gold"], ["M", "silver"]]', ()=>{
+    expect(medalFemale(medalFemaleTest)).toEqual([["F", "gold"], ["M", "silver"]]);
+  });
+});
+
+/*
 describe('medalFemale', ()=>{
   it('is a function', ()=>{
     expect(typeof medalFemale).toBe('function');
@@ -96,5 +119,5 @@ it('returns [["F", "gold"], ["M", "silver"]]', ()=>{
   expect(medalFemale(medalFemaleTest)).toEqual([["F", "gold"], ["M", "silver"]]);
 });
 });
-
+*/
 
